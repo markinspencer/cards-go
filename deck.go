@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 type deck []string
 
@@ -23,6 +26,10 @@ func (d deck) print() {
 	for i, card := range d {
 		fmt.Println(i+1, card)
 	}
+}
+
+func (d deck) toString() string {
+	return strings.Join([]string(d), ",")
 }
 
 func deal(d deck, handSize int) (deck, deck) {
